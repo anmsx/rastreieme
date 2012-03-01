@@ -1,0 +1,84 @@
+<div class="container_12 clearfix leading">
+	<section class="portlet grid_12 leading"> 
+	    <header>
+	        <h2>Alterar informações</h2> 
+	    </header>
+	    <section>
+		<h3>
+			Você pode alterar algumas informações cadastrais
+	 	</h3>
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => 'form', :html => { :method => :put }) do |f| %>
+
+			<% if devise_error_messages!.size > 0 -%>
+			<div>
+				<div class='message error closeable'>
+					<span class="message-close"></span>
+					<%= devise_error_messages! %>
+				</div>
+			</div>
+			<% end -%>
+
+			<div>
+				<%= f.label :password, 'Senha',:class => 'form-label' %>
+				<div class="form-input">
+					<%= f.email_field :password %>
+				</div>
+			</div>
+
+			<br />
+
+			<div>
+				<%= f.label :password_confirmation, 'Confirme a senha', :class => 'form-label' %>
+				<div class="form-input">
+					<%= f.email_field :password_confirmation %>
+				</div>
+			</div>
+
+			<br />
+							
+			<div>
+				<%= f.label :current_password, 'Senha atual',  :class => 'form-label' %>
+				<div class="form-input">
+					<%= f.email_field :current_password %>
+				</div>
+			</div>
+
+			<br />
+							
+			<div>
+				<div class="form-input">
+					<%= f.submit "Enviar" %>
+				</div>
+			</div>
+		<% end %>
+
+		<br />
+
+		<div><%= render "links" %></div>
+
+		</section>
+	</section>
+</div>
+
+
+<div class="container_12 clearfix leading">
+	<section class="portlet grid_12 leading"> 
+	    <header>
+	        <h2>Cancelar a conta</h2> 
+	    </header>
+	    <section>
+		<h3>
+			Insatisfeito com o serviço prestado ? Você pode cancelar a sua conta.
+	 	</h3>
+
+		<h5>
+			Não será possível reativar uma conta cancelada. Mas você pode cadastrar-se novamente a qualquer momento.
+	 	</h5>
+
+			<div>
+				<%= link_to "Por favor, cancele a minha conta", registration_path(resource_name), :confirm => "Tem certeza ?", :method => :delete %>.
+			</div>
+
+		</section>
+	</section>
+</div>

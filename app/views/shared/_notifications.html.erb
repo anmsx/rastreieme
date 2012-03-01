@@ -1,0 +1,24 @@
+<div id="notifications-popover" class="popover">
+    <header>
+        Notifications
+    </header>
+    <section>
+        <div class="content">
+            <nav>
+                <ul>
+                    <li class="new"><a><span class="avatar"></span>Objeto SZ9988293494302438BR em atraso</a></li>
+                    <li class="new"><a><span class="avatar"></span>Manifesto iniciado: 4f4701b35c17c31753000008</a></li>
+                    <li class="read"><a><span class="avatar"></span>Manifesto finalizado: 4f4701b35c17c31753000008</a></li>
+                    <li><a href="#notifications.html" title="Notifications">See notification styles and growl like messages...</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('#notifications-button').popover('#notifications-popover', {preventRight: true});
+	$('#notification_count').html(<%= Time.now.min %>)
+});
+</script>

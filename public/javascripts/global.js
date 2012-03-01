@@ -73,11 +73,13 @@ $(document).ready(function() {
         }
     });
 
+	/*
     if (!location.href.match(/login\.html$/i)&&(!location.hash||location.hash=='#menu')) {
         location.hash = $('.drilldownMenu .current a').attr("href");
     } else {
         $(window).trigger("hashchange");
     }
+	*/
 
     $("#wrapper > section > aside > nav").length && $("#wrapper > section > aside > nav").each(function(){
         var base = $(this);

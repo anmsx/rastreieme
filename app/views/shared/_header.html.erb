@@ -1,0 +1,34 @@
+<header>
+    <h1><%= link_to root_path, 'vPad' %></h1>
+	<% if user_signed_in? -%>
+    <nav>
+        <div class="container_12">
+            <div class="grid_12">
+                <ul class="toolbar clearfix fl">
+                    <li>
+                        <a href="#" title="Activity" class="icon-only" id="activity-button">
+							<%= image_tag "navicons-small/77.png" %>
+                            <span class="message-count" id="activity_count"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Notifications" class="icon-only" id="notifications-button">
+                            <%= image_tag "navicons-small/08.png" %>
+                            <span class="message-count" id="notification_count"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Settings" class="icon-only" id="settings-button">
+                            <%= image_tag "navicons-small/19.png" %>
+                        </a>
+                    </li>
+                </ul>
+				<%= button_to 'Sair', destroy_user_session_path, :method => :delete, :class => 'button icon-with-text fr' %>
+				<div class="user-info fr">
+                    Acessando como <a href="#"><%= current_user.name%></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <% end -%>
+</header>

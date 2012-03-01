@@ -1,0 +1,46 @@
+<div class="container_12 clearfix leading">
+	<section class="portlet grid_12 leading"> 
+	    <header>
+	        <h2>Esqueci minha senha</h2> 
+	    </header>
+	    <section>
+		<h3>
+			Esqueceu a sua senha ?
+	 	</h3>
+		<h5>Sem problemas. Informe seu email e clique em enviar que em alguns instantes você receberá
+			um email com instruções para cadastrar uma nova senha.</h5>
+
+		<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :class => 'form') do |f| %>
+
+			<% if devise_error_messages!.size > 0 -%>
+			<div>
+				<div class='message error closeable'>
+					<span class="message-close"></span>
+					<%= devise_error_messages! %>
+				</div>
+			</div>
+			<% end -%>
+
+			<div>
+				<%= f.label :email, :class => 'form-label' %>
+				<div class="form-input">
+					<%= f.email_field :email %>
+				</div>
+			</div>
+
+			<br />
+							
+			<div>
+				<div class="form-input">
+					<%= f.submit "Enviar" %>
+				</div>
+			</div>
+		<% end %>
+
+		<br />
+
+		<div><%= render "links" %></div>
+
+		</section>
+	</section>
+</div>

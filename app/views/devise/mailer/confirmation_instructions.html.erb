@@ -1,0 +1,5 @@
+<p>Quase lá <%= @resource.name %>!</p>
+
+<p>Confirme a sua conta acessando o link abaixo</p>
+
+<p><%= link_to 'Confirmar conta', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>

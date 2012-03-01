@@ -1,0 +1,60 @@
+<!-- Sidebar -->
+<aside>
+    <nav class="drilldownMenu">
+        <h1>
+            <span class="title">Main Menu</span>
+            <button title="Voltar" class="back">Voltar</button>
+        </h1>
+        <ul class="tlm">
+
+			<% if user_signed_in? -%>
+            <li class="hasul"><a href="#"><%= image_tag "navicons/111.png" %><span>Minha conta</span></a>
+                <ul>
+
+		            <li>
+						<%= link_to edit_user_registration_path do %>
+							<%= image_tag "navicons/03.png" %>
+							<span>Alterar senha</span>
+						<% end %>
+					</li>
+
+                    <li><a href="#"><%= image_tag "navicons/132.png" %><span>Histórico de pagamentos</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Cadastrar objetos</span></a></li>
+            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Consultar objetos</span></a></li>
+            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Objetos em atraso</span></a></li>
+            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações em andamento</span></a></li>
+            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações finalizadas</span></a></li>
+			<% end -%>
+			
+            <li><a href="/about" title="Sobre"><%= image_tag "navicons/29.png" %><span>Sobre</span></a></li>
+
+			<% if not user_signed_in?%>
+            <li>
+				<%= link_to new_user_registration_path do %>
+					<%= image_tag "navicons/29.png" %>
+					<span>Cadastre-se</span>
+				<% end %>
+			</li>
+            <li>
+				<%= link_to new_user_session_path do %>
+					<%= image_tag "navicons/54.png" %>
+					<span>Login</span>
+				<% end %>
+			</li>
+			<% end -%>
+
+			<% if user_signed_in?%>
+            <li>
+				<%= link_to destroy_user_session_path, :method => :delete do %>
+					<%= image_tag "navicons/129.png" %>
+					<span>Sair</span>
+				<% end %>
+			</li>
+			<% end -%>
+        </ul>
+    </nav>
+</aside>
+<!-- Sidebar End -->
+
