@@ -21,7 +21,14 @@
                     <li><a href="#"><%= image_tag "navicons/132.png" %><span>Histórico de pagamentos</span></a></li>
                 </ul>
             </li>
-            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Cadastrar objetos</span></a></li>
+            <li>
+	            <li>
+					<%= link_to new_tracking_numbers_path do %>
+						<%= image_tag "navicons/123.png" %>
+						<span>Cadastrar objetos</span>
+					<% end %>
+				</li>
+			</li>
             <li><a href="#"><%= image_tag "navicons/123.png" %><span>Consultar objetos</span></a></li>
             <li><a href="#"><%= image_tag "navicons/123.png" %><span>Objetos em atraso</span></a></li>
             <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações em andamento</span></a></li>

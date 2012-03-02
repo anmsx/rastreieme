@@ -11,3 +11,23 @@
  *= require_self
  *= require_tree .
 */
+.simple_form div.input {
+  margin-bottom: 10px;
+}
+
+
+div.boolean, .simple_form input[type='submit'] {
+  margin-left: 120px;
+}
+
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form .error {
+  clear:   left;
+  color:   black;
+  display: block;
+  font-size:    12px;
+}
