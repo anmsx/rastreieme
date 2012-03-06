@@ -1,0 +1,35 @@
+<%if @errors.count > 0 -%>
+	<div class="container_12 clearfix ">
+		<section class="grid_12">
+			<div class='message error closeable' id="flash_error">
+				<span class="message-close"></span>
+				<h5>Ocorreram os erros abaixo durante o cadastro do objetos:</h5>
+	<% @errors.each do |error|%>
+		<%= error %><br />
+	<% end %>
+			</div>
+		</section>
+	</div>
+<% end %>
+
+<%if @success.count > 0 -%>
+	<div class="container_12 clearfix ">
+		<section class="grid_12">
+			<div class='message info closeable' id="flash_info">
+				<span class="message-close"></span>
+				<h5>Os seguintes objetos foram cadastrados com sucesso:</h5>
+	<% @success.each do |success|%>
+		<%= link_to success.number, tracking_number_path(success) %><br />
+	<% end %>
+			</div>
+		</section>
+	</div>
+<% end %>
+
+<%= simple_form_for @tracking_number do |f| %>
+
+	<%= f.label :number, 'Números de objeto'%><br />
+	<%= f.input :number, :as => :text, :input_html => {:cols => 100}, :label => false %><br />
+
+	<%= f.button :submit, 'Salvar'  %><br />
+<% end %>

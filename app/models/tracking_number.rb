@@ -11,12 +11,16 @@ class TrackingNumber
     FINISHED => 'Finalizado'
   }
 
-  field :number, :type => String, :null => false
+  field :number,            :type => String, :null => false
+  field :description,       :type => String
   field :shipping_price,    :type => BigDecimal
   field :destination,       :type => String
   field :status,            :type => String
   field :status_updated_at, :type => Time, :default => Time.now
   field :created_at,        :type => Time, :default => Time.now
+
+  field :post_date, :type => Time
+  
 
   referenced_in :user
 
@@ -25,5 +29,16 @@ class TrackingNumber
   validates_format_of :destination, :with => /\A\d{5}\-\d{3}$/, :allow_blank => true, :message => "CEP inválido"
   validate :shipping_price, :numericality => true, :greater_than => 0
   validates_inclusion_of :status, :in => [OPEN, DELAYED, FINISHED]
+
+  def status_name
+    STATUS_NAME[self.status]
+  end
+
+  def shipping_date
+  end
+
+  def is_not_from_user(user)
+    user_id != user.id
+  end
 
 end

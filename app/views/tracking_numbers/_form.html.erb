@@ -1,8 +1,13 @@
-<% if !notice.nil? %><div class="msg msg-info"><p><%= notice %></p></div><% end %>
-<% if !alert.nil? %><div class="msg msg-error"><p><%= alert %></p></div><% end %>
 			<%= simple_form_for @tracking_number do |f| %>
 				<%= f.label :number, 'Número do objeto'%>
 				<%= f.input :number, :label => false, :hint => ' Exemplo: SS987654321BR' %><br />
+
+
+				<h5>As informações abaixo não são obrigatórias!</h5>
+
+				<%= f.label :description, 'Descrição'%>
+				<%= f.input :description, :label => false, :hint => ' Pode ser o nome do cliente ou uma identificação qualquer' %><br />
+
 
 				<%= f.label :destination, 'CEP de destino'%>
 				<%= f.input :destination, :label => false, :hint => ' Exemplo: 12345-000' %><br />
