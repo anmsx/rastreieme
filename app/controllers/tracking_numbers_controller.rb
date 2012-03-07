@@ -1,6 +1,8 @@
+require 'correios'
+
 class TrackingNumbersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :find_tracking_number, :only => [:show, :edit, :update]
+  before_filter :find_tracking_number, :only => [:show, :edit, :update, :destroy, :status]
   
   def new
     @tracking_number = TrackingNumber.new
@@ -30,14 +32,30 @@ class TrackingNumbersController < ApplicationController
   def update
     @tracking_number.update_attributes(params[:tracking_number])
     redirect_to(tracking_number_path(@tracking_number), :notice => 'Número de objeto atualizado com sucesso.') if @tracking_number.valid?
-      render :action => :edit if !@tracking_number.valid?
+    render :action => :edit if !@tracking_number.valid?
   end
   
   def show
+    @tracking_numbers = TrackingNumber.from_user(current_user, params[:list_status])
+  end
+
+  def status
+    @occurrences = Correios.encomenda(@tracking_number.number)
+    show
+    render :show
   end
 
   def edit
-    
+  end
+
+  def list
+    @status = params[:list_status]
+    @tracking_numbers = TrackingNumber.from_user(current_user, @status)
+  end
+
+  def destroy
+    @tracking_number.destroy
+    redirect_to(root_url, :notice => 'Objeto removido com sucesso.')
   end
 
   def multi

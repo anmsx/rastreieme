@@ -1,0 +1,36 @@
+<% if @tracking_numbers.count > 0 %>
+<div class="container_12 clearfix leading">
+	<section class="portlet grid_12 leading"> 
+	    <header>
+	        <h2>Objetos</h2> 
+	    </header>
+	    <section>
+		<h3>
+			Listando objetos
+	 	</h3>
+
+		<table class="full">
+			<thead>
+				<tr>
+					<td>Objeto</td>
+					<td>Status</td>
+					<td>Descrição</td>
+					<td>Detalhes</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @tracking_numbers.each do |tn|%>
+				<tr>
+					<td><%= link_to tn.number, tracking_number_path(tn, :list_status => params[:list_status]) %></td>
+					<td><%= tn.status_name %></td>
+					<td><%= tn.description %></td>
+					<td><%= link_to 'Exibir objeto', tracking_number_path(tn, :list_status => params[:list_status])%></td>
+				</tr>
+				<% end %>
+			</tbody> 
+		</table> 
+
+ 		</section>
+	</section>
+</div>
+<% end %>

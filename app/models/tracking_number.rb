@@ -37,6 +37,10 @@ class TrackingNumber
   def shipping_date
   end
 
+  def TrackingNumber.from_user(user, status)
+    TrackingNumber.where({:user_id => user.id, :status => status})
+  end
+
   def is_not_from_user(user)
     user_id != user.id
   end

@@ -23,14 +23,36 @@
             </li>
             <li>
 	            <li>
-					<%= link_to new_tracking_numbers_path do %>
-						<%= image_tag "navicons/123.png" %>
+					<%= link_to new_tracking_number_path do %>
+						<%= image_tag "navicons/165.png" %>
 						<span>Cadastrar objetos</span>
 					<% end %>
 				</li>
 			</li>
-            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Consultar objetos</span></a></li>
-            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Objetos em atraso</span></a></li>
+            <li>
+	            <li>
+					<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::OPEN) do %>
+						<%= image_tag "navicons/160.png" %>
+						<span>Listar objetos em aberto</span>
+					<% end %>
+				</li>
+			</li>
+            <li>
+	            <li>
+					<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::DELAYED) do %>
+						<%= image_tag "navicons/122.png" %>
+						<span>Listar objetos atrasados</span>
+					<% end %>
+				</li>
+			</li>
+            <li>
+	            <li>
+					<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::FINISHED) do %>
+						<%= image_tag "navicons/101.png" %>
+						<span>Listar objetos finalizados</span>
+					<% end %>
+				</li>
+			</li>
             <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações em andamento</span></a></li>
             <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações finalizadas</span></a></li>
 			<% end -%>

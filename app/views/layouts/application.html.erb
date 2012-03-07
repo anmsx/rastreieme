@@ -15,7 +15,6 @@
 
 <title>rastreie:me - Sua encomenda, seu prazo.</title>
 
-<link rel="shortcut icon" href="favicon.ico">
 
 <!-- iOS ICONS -->
 <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
@@ -26,6 +25,7 @@
 
 
 <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "jquery.min.js" %>
 <%= csrf_meta_tags %>
 <%= render 'shared/css'%>
 
@@ -35,7 +35,7 @@
 <![endif]-->
 
 </head>
-<body style="overflow: hidden;">
+<body>
     <div id="wrapper">
 		<%= render 'shared/header' %>
         <section>
@@ -45,7 +45,7 @@
                 <header>
                     <div class="container_12 clearfix">
                         <a href="#menu" class="showmenu button">Menu</a>
-                        <h1 class="grid_12">Dashboard</h1>
+                        <h1 class="grid_12">rastreie:me</h1>
                     </div>
                 </header>
                 <section id="main-content">
@@ -92,6 +92,10 @@
         $(document).ready(function() {
             $('#settings-button').popover('#settings-popover', {preventRight: true});
         });
+        //$("> div:last", '#main-content').css({left: 0, position: 'relative'}).siblings().remove();
+        $("> div:last", '#main-content').css({position: 'relative'}).siblings().remove();
+
+
     </script>
     <!-- POPOVERS SETUP END-->
 

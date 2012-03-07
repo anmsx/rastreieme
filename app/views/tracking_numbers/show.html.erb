@@ -17,7 +17,19 @@
 		Destino: <strong><%= @tracking_number.destination %></strong><br/>
 		Última atualização: <strong><%= @tracking_number.status_updated_at %></strong><br/>
 
-		<%= link_to 'Editar objeto', edit_tracking_number_path(@tracking_number)%>
+		<br />
+
+        <div class="form-action clearfix">
+			<%= link_to 'Editar objeto', edit_tracking_number_path(@tracking_number), :class => 'button'%>
+			<%= link_to 'Exibir ocorrências', status_tracking_number_path(@tracking_number, :list_status => params[:list_status]), :class => 'button'%>
+        	<%= link_to 'Excluir', @tracking_number, :class => 'button', :confirm => 'Você tem certeza ?', :method => :delete, :class => 'button' %>
+ 		</div>
+
+		<%= render 'status' if !@occurrences.nil?%>
+
 		</section>
 	</section>
 </div>
+
+
+<%= render 'list'%>

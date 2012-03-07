@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:anmsx/correios-api.git
+  revision: 58bdeefc058574d5627bd4de6a88b02f0902632e
+  specs:
+    correios-api (0.1.2)
+      hpricot (>= 0.6.164)
+      sinatra (>= 0.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,6 +47,7 @@ GEM
       warden (~> 1.1.1)
     erubis (2.7.0)
     hike (1.2.1)
+    hpricot (0.8.6)
     i18n (0.6.0)
     journey (1.0.3)
     jquery-rails (2.0.0)
@@ -62,6 +71,8 @@ GEM
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
+    rack-protection (1.2.0)
+      rack
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -87,6 +98,10 @@ GEM
     simple_form (2.0.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    sinatra (1.3.2)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -105,6 +120,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  correios-api!
   devise
   jquery-rails
   json
