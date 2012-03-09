@@ -8,3 +8,5 @@ gem 'devise'
 gem 'mongoid'
 gem 'simple_form'
 gem "correios-api", :git => "git@github.com:anmsx/correios-api.git"
+gem "business_time"
+gem 'holidays'

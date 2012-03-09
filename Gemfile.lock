@@ -40,6 +40,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bson (1.5.2)
     builder (3.0.0)
+    business_time (0.4.0)
+      activesupport (>= 2.0.0)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -47,6 +49,8 @@ GEM
       warden (~> 1.1.1)
     erubis (2.7.0)
     hike (1.2.1)
+    holidays (1.0.4)
+      holidays
     hpricot (0.8.6)
     i18n (0.6.0)
     journey (1.0.3)
@@ -120,8 +124,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  business_time
   correios-api!
   devise
+  holidays
   jquery-rails
   json
   mongoid
