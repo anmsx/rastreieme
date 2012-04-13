@@ -8,7 +8,8 @@
         <ul class="tlm">
 
 			<% if user_signed_in? -%>
-            <li class="hasul"><a href="#"><%= image_tag "navicons/111.png" %><span>Minha conta</span></a>
+            <li class="hasul">
+				<a href="#"><span>Minha conta</span></a>
                 <ul>
 
 		            <li>
@@ -29,32 +30,61 @@
 					<% end %>
 				</li>
 			</li>
-            <li>
-	            <li>
-					<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::OPEN) do %>
-						<%= image_tag "navicons/160.png" %>
-						<span>Listar objetos em aberto</span>
-					<% end %>
-				</li>
+			<li><a href="#"><%= image_tag "navicons/124.png" %><span>Cadastrar manifestação</span></a></li>
+    		
+			<li class="hasul">
+				<a href="#"><span>Listar objetos</span></a>
+				<ul>
+		            <li>
+			            <li>
+							<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::DELAYED) do %>
+								<%= image_tag "navicons/122.png" %>
+								<span>Atrasados</span>
+							<% end %>
+						</li>
+					</li>
+		            <li>
+			            <li>
+							<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::UNKNOWN) do %>
+								<%= image_tag "navicons/171.png" %>
+								<span>Status desconhecido</span>
+							<% end %>
+						</li>
+					</li>
+		            <li>
+			            <li>
+							<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::OPEN) do %>
+								<%= image_tag "navicons/160.png" %>
+								<span>Em aberto</span>
+							<% end %>
+						</li>
+					</li>
+		            <li>
+			            <li>
+							<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::RETURNED) do %>
+								<%= image_tag "navicons/113.png" %>
+								<span>Devolvido ao remetente</span>
+							<% end %>
+						</li>
+					</li>
+		            <li>
+			            <li>
+							<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::FINISHED) do %>
+								<%= image_tag "navicons/101.png" %>
+								<span>Finalizados</span>
+							<% end %>
+						</li>
+					</li>
+				</ul>
 			</li>
-            <li>
-	            <li>
-					<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::DELAYED) do %>
-						<%= image_tag "navicons/122.png" %>
-						<span>Listar objetos atrasados</span>
-					<% end %>
-				</li>
+			<li class="hasul">
+				<a href="#"><span>Listar manifestações</span></a>
+				<ul>
+            		<li><a href="#"><%= image_tag "navicons/123.png" %><span>Em andamento</span></a></li>
+            		<li><a href="#"><%= image_tag "navicons/123.png" %><span>Finalizadas</span></a></li>
+				</ul>
 			</li>
-            <li>
-	            <li>
-					<%= link_to list_tracking_numbers_path(:list_status => TrackingNumber::FINISHED) do %>
-						<%= image_tag "navicons/101.png" %>
-						<span>Listar objetos finalizados</span>
-					<% end %>
-				</li>
-			</li>
-            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações em andamento</span></a></li>
-            <li><a href="#"><%= image_tag "navicons/123.png" %><span>Manifestações finalizadas</span></a></li>
+			
 			<% end -%>
 			
             <li><a href="/about" title="Sobre"><%= image_tag "navicons/29.png" %><span>Sobre</span></a></li>

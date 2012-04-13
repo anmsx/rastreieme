@@ -5,23 +5,27 @@
         <div class="container_12">
             <div class="grid_12">
                 <ul class="toolbar clearfix fl">
+					<% if false %>
                     <li>
                         <a href="#" title="Activity" class="icon-only" id="activity-button">
 							<%= image_tag "navicons-small/77.png" %>
                             <span class="message-count" id="activity_count"></span>
                         </a>
                     </li>
+					<% end %>
                     <li>
                         <a href="#" title="Notifications" class="icon-only" id="notifications-button">
                             <%= image_tag "navicons-small/08.png" %>
                             <span class="message-count" id="notification_count"></span>
                         </a>
                     </li>
+					<% if false %>
                     <li>
                         <a href="#" title="Settings" class="icon-only" id="settings-button">
                             <%= image_tag "navicons-small/19.png" %>
                         </a>
                     </li>
+					<% end %>
                 </ul>
 				<%= button_to 'Sair', destroy_user_session_path, :method => :delete, :class => 'button icon-with-text fr' %>
 				<div class="user-info fr">

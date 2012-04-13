@@ -1,5 +1,6 @@
 require 'correios'
 
+
 class TrackingNumbersController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_tracking_number, :only => [:show, :edit, :update, :destroy, :status]

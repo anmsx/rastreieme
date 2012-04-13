@@ -1,7 +1,9 @@
 			<%= simple_form_for @tracking_number do |f| %>
+
+				<% if params[:action] == 'new' %>
 				<%= f.label :number, 'Número do objeto'%>
 				<%= f.input :number, :label => false, :hint => ' Exemplo: SS987654321BR' %><br />
-
+				<% end %>
 
 				<h5>As informações abaixo não são obrigatórias!</h5>
 

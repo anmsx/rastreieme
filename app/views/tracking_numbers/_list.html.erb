@@ -7,6 +7,9 @@
 	    <section>
 		<h3>
 			Listando objetos
+			<% if params[:list_status] && !TrackingNumber::STATUS_NAME[params[:list_status]].nil? %>
+				com status <b><%= TrackingNumber::STATUS_NAME[params[:list_status]].upcase %><b>
+			<% end %>
 	 	</h3>
 
 		<table class="full">

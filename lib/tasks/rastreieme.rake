@@ -13,7 +13,7 @@ namespace :rastreieme do
         next
       end
       puts "---- #{tn.number}"
-      tn.update_post_date object.primeiro_status_disponivel
+      puts "---- #{object.ultimo_status_disponivel.situacao}"
       tn.update_remote_status object.ultimo_status_disponivel
       tn.set_delayed_if_delayed
     end
